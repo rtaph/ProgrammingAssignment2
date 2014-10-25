@@ -1,4 +1,4 @@
-## This code contains two functions which work together to 
+## This code contains two functions that work together to 
 ## calculate the inverse of a matrix. As this operation can 
 ## be time consuming, the functions evaluate whether the 
 ## operation has been completed before, and returns a 
