@@ -9,14 +9,29 @@
 ## setinverse, and getinverse
 
 makeCacheMatrix <- function(x = matrix()) {
+  
+        ## set matrix inverse variable to null any time a new
+        ## set of data is passed into the function
         xinv <- NULL
+        
+        ## pass new matrix into object, clear matrix inverse
+        ## variable in parent environment from pre-existing data
         set <- function(y = matrix()){
           x <<- y
           xinv <<- NULL
         }
+        
+        ## function to return the matrix passed into the function
         get <- function() x
+        
+        ## Write a supposed matrix inverse into memory. The
+        ## function does not evaluate whether the input argument
+        ## is truly the inverse of 'x' (it can be bogus)
         setinv <- function(somematrix) xinv <<- somematrix
+        
+        ## return the supposed inverse matrix stored in memory
         getinverse <- function() xinv
+        
         list(set = set, get = get,
              setinv = setinv,
              getinverse = getinverse)
